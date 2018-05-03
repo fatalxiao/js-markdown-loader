@@ -2,7 +2,6 @@ const path = require('path'),
     autoprefixer = require('autoprefixer'),
 
     config = require('./config.js'),
-    markdownLoader = require('../src'),
     utils = require('./utils.js'),
 
     cssLoaderConfig = ['style-loader', {
