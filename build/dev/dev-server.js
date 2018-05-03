@@ -38,6 +38,6 @@ module.exports = app.listen(config.dev.port, err => {
         return console.log(err);
     }
 
-    // opn(uri);
+    opn(uri);
 
 });
