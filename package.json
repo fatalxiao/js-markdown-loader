@@ -1,8 +1,8 @@
 {
     "name": "js-markdown-loader",
     "author": "falalxiao",
-    "version": "1.0.1",
-    "description": "A markdown language js compiler.",
+    "version": "0.0.1",
+    "description": "Webpack loader for js-markdown.",
     "main": "./src/index.js",
     "scripts": {
         "pre-publish": "rimraf dist && gulp copy",
@@ -16,18 +16,18 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/fatalxiao/js-markdown"
+        "url": "https://github.com/fatalxiao/js-markdown-loader"
     },
     "keywords": [
-        "javascript",
-        "markdown",
-        "paser"
+        "webpack",
+        "loader",
+        "js-markdown"
     ],
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/fatalxiao/js-markdown/issues"
+        "url": "https://github.com/fatalxiao/js-markdown-loader/issues"
     },
-    "homepage": "https://fatalxiao.github.io/js-markdown",
+    "homepage": "https://fatalxiao.github.io/js-markdown-loader",
     "dependencies": {
         "babel-polyfill": "^6.26.0",
         "brace": "^0.11.1",
