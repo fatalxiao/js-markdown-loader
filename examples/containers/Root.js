@@ -1,17 +1,12 @@
 import React, {Component} from 'react';
 import MarkDownData from 'assets/MarkDown.md';
 
-import 'assets/sass/MarkDownEditor.scss';
 import 'github-markdown-css';
 
-class AppRoot extends Component {
+class Root extends Component {
 
     constructor(props) {
-
         super(props);
-
-        console.log(MarkDownData);
-
     }
 
     render() {
@@ -21,4 +16,4 @@ class AppRoot extends Component {
     }
 }
 
-export default AppRoot;
+export default Root;
