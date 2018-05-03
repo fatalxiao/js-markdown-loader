@@ -27,15 +27,14 @@ function loader(content) {
 
         raw = content,
         markdownData = Markdown.parse(content, {fullInfo: true}),
-
-        links = attrParse(content, (tag, attr) => !!(attributes.find(a =>
-            a.charAt(0) === ':' ? attr === a.slice(1) : (tag + ':' + attr) === a
-        ))),
         data = {};
 
     content = [markdownData.html];
-    links.reverse();
 
+    const links = attrParse(content, (tag, attr) => !!(attributes.find(a =>
+        a.charAt(0) === ':' ? attr === a.slice(1) : (tag + ':' + attr) === a
+    )));
+    links.reverse();
     links.forEach(link => {
 
         if (!loaderUtils.isUrlRequest(link.value, root) || link.value.indexOf('mailto:') > -1) {
@@ -69,12 +68,7 @@ function loader(content) {
     const html = content.replace(/xxxHTMLLINKxxx[0-9\.]+xxx/g, match => !data[match] ?
         match
         :
-        '" + require(' + JSON.stringify(
-        config.interpolate === 'require' ?
-            data[match]
-            :
-            loaderUtils.urlToRequest(data[match], root)
-        ) + ') + "'
+        '" + require(' + JSON.stringify(loaderUtils.urlToRequest(data[match], root)) + ') + "'
     );
 
     return 'module.exports = ' + (
