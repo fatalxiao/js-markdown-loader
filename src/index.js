@@ -25,9 +25,10 @@ function loader(content) {
         config = getLoaderConfig(this),
         root = config.root,
 
+        markdownData = Markdown.parse(content, {fullInfo: true}),
         data = {};
 
-    content = [JSON.stringify(Markdown.parse(content, {fullInfo: true}))];
+    content = [JSON.stringify({...markdownData, raw: content})];
 
     const links = attrParse(content, (tag, attr) => !!(attributes.find(a =>
         a.charAt(0) === ':' ? attr === a.slice(1) : (tag + ':' + attr) === a
