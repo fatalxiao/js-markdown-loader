@@ -1,5 +1,4 @@
 import url from 'url';
-import assign from 'object-assign';
 import loaderUtils from 'loader-utils';
 import Markdown from 'js-markdown';
 
@@ -14,7 +13,7 @@ function getLoaderConfig(context) {
     var configKey = query.config || 'jsMarkdownLoader';
     var config = context.options && context.options.hasOwnProperty(configKey) ? context.options[configKey] : {};
     delete query.config;
-    return assign(query, config);
+    return {...query, ...config};
 }
 
 function loader(content) {
