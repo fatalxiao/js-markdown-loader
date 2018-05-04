@@ -28,11 +28,7 @@ module.exports = () => through.obj(function (chunk, encoding, callback) {
                 repository: data.repository,
                 license: data.license,
                 homepage: data.homepage,
-                dependencies: {
-                    'fastparse': data.dependencies['fastparse'],
-                    'js-markdown': data.dependencies['js-markdown'],
-                    'loader-utils': data.dependencies['loader-utils']
-                }
+                dependencies: data.dependencies
             };
 
         chunk.contents = new Buffer(JSON.stringify(miniData, null, 2));
