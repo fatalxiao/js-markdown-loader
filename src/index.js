@@ -30,9 +30,9 @@ function loader(content) {
 
     content = [JSON.stringify(markdownData.html)];
 
-    const links = attrParse(content, (tag, attr) => !!(attributes.find(a =>
+    const links = attrParse(content, (tag, attr) => attributes.find(a =>
         a.charAt(0) === ':' ? attr === a.slice(1) : (tag + ':' + attr) === a
-    )));
+    ));
     links.reverse();
     links.forEach(link => {
 
