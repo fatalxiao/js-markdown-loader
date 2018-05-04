@@ -31,8 +31,7 @@ module.exports = () => through.obj(function (chunk, encoding, callback) {
                 dependencies: {
                     'fastparse': data.dependencies['fastparse'],
                     'js-markdown': data.dependencies['js-markdown'],
-                    'loader-utils': data.dependencies['loader-utils'],
-                    'object-assign': data.dependencies['object-assign']
+                    'loader-utils': data.dependencies['loader-utils']
                 }
             };
 
