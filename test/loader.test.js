@@ -7,7 +7,7 @@ const expect = chai.expect;
 
 describe('loader', () => {
 
-    it('level 1', () => {
+    it('default', () => {
         expect(loader('')).to.be.equal('');
     });
 
