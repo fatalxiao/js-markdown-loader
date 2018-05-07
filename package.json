@@ -1,7 +1,7 @@
 {
     "name": "js-markdown-loader",
     "author": "falalxiao",
-    "version": "0.0.8",
+    "version": "0.0.9",
     "description": "Webpack loader for js-markdown.",
     "main": "./src/index.js",
     "scripts": {
