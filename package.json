@@ -24,7 +24,7 @@
     "homepage": "https://fatalxiao.github.io/js-markdown-loader",
     "dependencies": {
         "fastparse": "^1.1.1",
-        "js-markdown": "^1.0.8",
+        "js-markdown": "^1.0.9",
         "loader-utils": "^1.1.0"
     },
     "devDependencies": {
