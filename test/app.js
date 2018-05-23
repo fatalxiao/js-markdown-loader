@@ -1,3 +1,3 @@
 'use strict';
 
-export md from './example.md';
+import md from './example.md';
