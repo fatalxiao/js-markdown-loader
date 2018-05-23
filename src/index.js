@@ -25,10 +25,10 @@ function loader(content) {
         root = config.root,
 
         raw = content,
-        markdownData = Markdown.parse(content, {fullInfo: true}),
+        markdownData = Markdown.parse(content, config),
         data = {};
 
-    content = [JSON.stringify(markdownData.html)];
+    content = [config.fullInfo ? JSON.stringify(markdownData.html) : JSON.stringify(markdownData)];
 
     const links = attrParse(content, (tag, attr) => attributes.find(a =>
         a.charAt(0) === ':' ? attr === a.slice(1) : (tag + ':' + attr) === a
@@ -69,6 +69,10 @@ function loader(content) {
         :
         '" + require(' + JSON.stringify(data[match].slice(2, data[match].length - 3)) + ') + "'
     );
+
+    if (!config.fullInfo) {
+        return 'module.exports = ' + html + ';';
+    }
 
     const htmlPlaceholder = Math.random() + Math.random(),
         result = JSON.stringify({...markdownData, html: htmlPlaceholder, raw}).replace(htmlPlaceholder, html);
