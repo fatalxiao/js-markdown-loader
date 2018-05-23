@@ -39,6 +39,7 @@
         "gulp-sequence": "^1.0.0",
         "gulp-util": "^3.0.8",
         "mocha": "^5.2.0",
-        "rimraf": "^2.6.2"
+        "rimraf": "^2.6.2",
+        "webpack": "^4.8.3"
     }
 }

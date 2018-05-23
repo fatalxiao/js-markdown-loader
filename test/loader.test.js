@@ -1,14 +1,35 @@
-'use strict';
+// 'use strict';
+//
+// import loader from '../src';
+// import chai from 'chai';
+//
+// const expect = chai.expect;
+//
+// describe('loader', () => {
+//
+//     it('default', () => {
+//         expect(loader('')).to.be.equal('');
+//     });
+//
+// });
 
-import loader from '../src';
-import chai from 'chai';
+const webpack = require('webpack'),
+    webpackConfig = require('./webpack.config.js');
 
-const expect = chai.expect;
+webpack(webpackConfig, (err, stats) => {
 
-describe('loader', () => {
+    if (err) {
+        throw err;
+    }
 
-    it('default', () => {
-        expect(loader('')).to.be.equal('');
-    });
+    process.stdout.write(stats.toString({
+        colors: true,
+        modules: false,
+        children: false,
+        chunks: false,
+        chunkModules: false
+    }) + '\n\n');
+
+    console.log('Build complete.');
 
 });
