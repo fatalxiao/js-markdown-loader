@@ -16,19 +16,11 @@
 const webpack = require('webpack'),
     webpackConfig = require('./webpack.config.js');
 
-webpack(webpackConfig, (err, stats) => {
+webpack(webpackConfig, err => {
 
     if (err) {
         throw err;
     }
-
-    process.stdout.write(stats.toString({
-        colors: true,
-        modules: false,
-        children: false,
-        chunks: false,
-        chunkModules: false
-    }) + '\n\n');
 
     console.log('Build complete.');
 
