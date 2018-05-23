@@ -5,7 +5,7 @@
     "description": "Webpack loader for js-markdown.",
     "main": "./src/index.js",
     "scripts": {
-        "test": "mocha $NODE_DEBUG_OPTION test/*.test.js --require babel-core/register",
+        "test": "mocha $NODE_DEBUG_OPTION test/loader.test.js --require babel-core/register",
         "pre-publish": "rimraf dist && gulp copy"
     },
     "repository": {
