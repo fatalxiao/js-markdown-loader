@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
     entry: {
-        app: './test/index.js'
+        app: './test/app.js'
     },
     output: {
         path: path.resolve(__dirname, './dist'),
@@ -12,7 +12,11 @@ module.exports = {
     module: {
         rules: [{
             test: /\.md/,
-            loader: './src'
+            loader: './src',
+            options: {
+                fullInfo: true,
+                dialect: 'DERBY'
+            }
         }]
     }
 };
