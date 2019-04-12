@@ -36,7 +36,9 @@ function loader(content) {
     links.reverse();
     links.forEach(link => {
 
-        if (!loaderUtils.isUrlRequest(link.value, root) || link.value.indexOf('mailto:') > -1) {
+        if (!loaderUtils.isUrlRequest(link.value, root)
+            || link.value.includes('://')
+            || link.value.includes('mailto:')) {
             return;
         }
 
