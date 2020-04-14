@@ -6,17 +6,17 @@ module.exports = async function loader(content) {
     this && this.cacheable && this.cacheable();
 
     const markdownData = Markdown.parse(content, this.query),
-        hasFullInfo = this.query.fullInfo;
+        context = {
+            ...this,
+            query: {}
+        };
 
-    delete this.query.fullInfo;
-    delete this.query.dialect;
-
-    const result = hasFullInfo ?
-        await HtmlLoader.call(this, markdownData.html)
+    const result = this.query.fullInfo ?
+        await HtmlLoader.call(context, markdownData.html)
         :
-        await HtmlLoader.call(this, markdownData);
+        await HtmlLoader.call(context, markdownData);
 
-    if (!hasFullInfo) {
+    if (!this.query.fullInfo) {
         return result;
     }
 
