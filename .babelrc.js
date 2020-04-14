@@ -9,7 +9,8 @@ module.exports = {
     'env': {
 
         'test': {
-            presets
+            presets,
+            plugins
         },
 
         'production': {
