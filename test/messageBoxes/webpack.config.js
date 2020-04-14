@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
     entry: {
-        app: './test/app.js'
+        app: './test/messageBoxes/app.js'
     },
     output: {
         path: path.resolve(__dirname, './dist'),
