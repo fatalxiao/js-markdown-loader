@@ -17,5 +17,3 @@ package-lock.json
 
 # Distribution
 /dist
-/test/images/dist
-/test/messageBoxes/dist
