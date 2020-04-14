@@ -1,6 +1,5 @@
 'use strict';
 
-import log from 'friendly-errors-webpack-plugin/src/output';
 import loader from '../../src';
 import chai from 'chai';
 
@@ -14,16 +13,10 @@ describe('loader', () => {
 
         // expect(loader('')).to.be.equal('');
 
-        log.title('info', 'WAIT', `Building...`);
-
         webpack(webpackConfig, (err, stats) => {
-
             if (err) {
                 throw err;
             }
-
-            log.title('success', 'DONE', 'Build complete.');
-
         });
 
     });
