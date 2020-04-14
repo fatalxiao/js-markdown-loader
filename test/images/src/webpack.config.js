@@ -2,10 +2,10 @@ const path = require('path');
 
 module.exports = {
     entry: {
-        app: './test/images/app.js'
+        app: './test/images/src/index.js'
     },
     output: {
-        path: path.resolve(__dirname, './dist'),
+        path: path.resolve(__dirname, '../dist'),
         filename: '[name].js'
     },
     module: {
@@ -18,10 +18,7 @@ module.exports = {
             }
         }, {
             test: /\.md/,
-            loader: './src',
-            options: {
-                fullInfo: true
-            }
+            loader: './src'
         }]
     }
 };

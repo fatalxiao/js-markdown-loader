@@ -5,7 +5,7 @@ import chai from 'chai';
 
 const expect = chai.expect,
     webpack = require('webpack'),
-    webpackConfig = require('./webpack.config.js');
+    webpackConfig = require('./src/webpack.config.js');
 
 describe('loader', () => {
 
