@@ -1,7 +1,7 @@
 const presets = [
         '@babel/preset-env'
     ],
-    commonPlugins = [
+    plugins = [
         '@babel/plugin-transform-runtime'
     ];
 
@@ -14,9 +14,7 @@ module.exports = {
 
         'production': {
             presets,
-            plugins: [
-                ...commonPlugins
-            ]
+            plugins
         }
 
     }
