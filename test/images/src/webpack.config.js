@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+    mode: 'production',
     entry: {
         app: './test/images/src/index.js'
     },
@@ -18,7 +19,10 @@ module.exports = {
             }
         }, {
             test: /\.md/,
-            loader: './src'
+            loader: './src',
+            query: {
+                fullInfo: true
+            }
         }]
     }
 };

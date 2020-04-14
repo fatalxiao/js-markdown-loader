@@ -14,9 +14,13 @@ describe('loader', () => {
         // expect(loader('')).to.be.equal('');
 
         webpack(webpackConfig, (err, stats) => {
+
+            console.log(stats.toJson());
+
             if (err) {
                 throw err;
             }
+
         });
 
     });
