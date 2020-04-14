@@ -1,3 +1,3 @@
 # Images
 
-![Click Image](alcedo-logo.png)
+![Click Image](./alcedo-logo.png)

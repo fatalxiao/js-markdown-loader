@@ -1,10 +1,10 @@
 'use strict';
 
 import log from 'friendly-errors-webpack-plugin/src/output';
-// import loader from '../../src';
+import loader from '../../src';
 import chai from 'chai';
 
-const // expect = chai.expect,
+const expect = chai.expect,
     webpack = require('webpack'),
     webpackConfig = require('./webpack.config.js');
 
@@ -16,7 +16,7 @@ describe('loader', () => {
 
         log.title('info', 'WAIT', `Building...`);
 
-        webpack(webpackConfig, err => {
+        webpack(webpackConfig, (err, stats) => {
 
             if (err) {
                 throw err;
