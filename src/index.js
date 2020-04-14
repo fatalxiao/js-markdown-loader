@@ -9,6 +9,8 @@ module.exports = async function loader(content) {
         hasFullInfo = this.query.fullInfo;
 
     delete this.query.fullInfo;
+    delete this.query.dialect;
+
     const result = hasFullInfo ?
         await HtmlLoader.call(this, markdownData.html)
         :
