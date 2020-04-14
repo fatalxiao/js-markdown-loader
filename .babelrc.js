@@ -3,24 +3,21 @@ const presets = [
     ],
     commonPlugins = [
         '@babel/plugin-transform-runtime'
-    ],
-    packageConfig = {
-        presets,
-        plugins: [
-            ...commonPlugins
-        ]
-    };
+    ];
 
 module.exports = {
     'env': {
 
         'test': {
-            'presets': [
-                '@babel/preset-env'
-            ]
+            presets
         },
 
-        'production': packageConfig
+        'production': {
+            presets,
+            plugins: [
+                ...commonPlugins
+            ]
+        }
 
     }
 };
