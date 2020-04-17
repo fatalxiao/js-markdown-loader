@@ -12,18 +12,6 @@ describe('loader', () => {
         expect(getModuleSource('./images.js', stats)).toMatchSnapshot('module');
         expect(execute(readAsset('main.bundle.js', compiler, stats))).toMatchSnapshot('result');
 
-        // expect(loader('')).to.be.equal('');
-
-        // webpack(webpackConfig, (err, stats) => {
-        //
-        //     console.log(stats.toJson());
-        //
-        //     if (err) {
-        //         throw err;
-        //     }
-        //
-        // });
-
     });
 
 });
