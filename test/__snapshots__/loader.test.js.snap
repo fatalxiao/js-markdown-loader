@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`loader images: module 1`] = `
+"import md from './images.md';
+
+export default md;
+"
+`;
+
+exports[`loader images: result 1`] = `
+Object {
+  "html": "<h1><a id=\\"Images\\" href=\\"#Images\\"></a>Images</h1><p><img alt=\\"Click Image\\" src=\\"/webpack/public/path/img/alcedo-logo.04a8d36.png\\"/></p>",
+  "raw": "# Images
+
+![Click Image](./alcedo-logo.png)
+",
+  "renderTree": Object {
+    "children": Array [
+      Object {
+        "children": Array [
+          Object {
+            "rawValue": "Images",
+            "type": "Text",
+          },
+        ],
+        "level": 1,
+        "rawValue": "",
+        "type": "AtxHeader",
+      },
+      Object {
+        "rawValue": "",
+        "type": "BlankLine",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "alt": "Click Image",
+            "src": "./alcedo-logo.png",
+            "type": "Image",
+          },
+        ],
+        "rawValue": "",
+        "type": "Paragraph",
+      },
+      Object {
+        "rawValue": "",
+        "type": "BlankLine",
+      },
+    ],
+    "footnotes": Array [],
+    "headerTree": Object {
+      "children": Array [
+        Object {
+          "children": Array [],
+          "innerHtml": "Images",
+          "level": 1,
+        },
+      ],
+      "isRoot": true,
+    },
+    "isRoot": true,
+    "metaData": Object {},
+    "referenceDefine": Object {},
+  },
+}
+`;
