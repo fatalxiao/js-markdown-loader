@@ -17,4 +17,4 @@ package-lock.json
 
 # Distribution
 /dist
-/test/*/dist
+/test/outputs
