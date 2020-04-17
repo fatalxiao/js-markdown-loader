@@ -9,8 +9,6 @@ describe('loader', () => {
         const compiler = getCompiler('images.js');
         const stats = await compile(compiler);
 
-        console.log('execute(readAsset(\'main.bundle.js\', compiler, stats))::', execute(readAsset('main.bundle.js', compiler, stats)));
-
         expect(getModuleSource('./images.js', stats)).toMatchSnapshot('module');
         expect(execute(readAsset('main.bundle.js', compiler, stats))).toMatchSnapshot('result');
         expect(getWarnings(stats)).toMatchSnapshot('warnings');
