@@ -1,0 +1,23 @@
+import Module from 'module';
+import path from 'path';
+
+const parentModule = module;
+
+export default code => {
+
+    const resource = 'test.js';
+    const module = new Module(resource, parentModule);
+
+    module.paths = Module._nodeModulePaths(
+        path.resolve(__dirname, '../fixtures')
+    );
+    module.filename = resource;
+
+    module._compile(
+        `${code};module.exports = ___TEST___.default ?___TEST___.default : ___TEST___;`,
+        resource
+    );
+
+    return module.exports;
+
+};
