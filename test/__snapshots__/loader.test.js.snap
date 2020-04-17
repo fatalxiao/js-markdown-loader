@@ -68,3 +68,16 @@ Object {
 `;
 
 exports[`loader images: warnings 1`] = `Array []`;
+
+exports[`loader messageBoxes: errors 1`] = `Array []`;
+
+exports[`loader messageBoxes: module 1`] = `
+"'use strict';
+
+import md from './messageBoxes.md';
+"
+`;
+
+exports[`loader messageBoxes: result 1`] = `Object {}`;
+
+exports[`loader messageBoxes: warnings 1`] = `Array []`;

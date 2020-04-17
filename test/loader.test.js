@@ -16,4 +16,16 @@ describe('loader', () => {
 
     });
 
+    it('messageBoxes', async () => {
+
+        const compiler = getCompiler('messageBoxes.js');
+        const stats = await compile(compiler);
+
+        expect(getModuleSource('./messageBoxes.js', stats)).toMatchSnapshot('module');
+        expect(execute(readAsset('main.bundle.js', compiler, stats))).toMatchSnapshot('result');
+        expect(getWarnings(stats)).toMatchSnapshot('warnings');
+        expect(getErrors(stats)).toMatchSnapshot('errors');
+
+    });
+
 });
